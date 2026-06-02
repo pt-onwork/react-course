@@ -15,29 +15,72 @@
       function ChatInput(){
         return (
           <>
-            <input placeholder="Send a message to Chatbot" size="30"/>
+            <input 
+              placeholder="Send a message to Chatbot" 
+              size="30"
+            />
             <button> Send</button>
           </>
         );
 
       }
 
-      function ChatMessage(){
+      function ChatMessage({message,sender}){
+        //destructuring props
+        //const {message,sender} = props;
+        
+        /*
+        if(sender === 'robot'){
+          return (
+            <div>
+              <img src='robot.png' width="50" />
+              {message}
+            </div>
+          );
+        } guard operator used below inside jsx directly &&
+        */
+
+        return (
+          <div>
+            {sender ==='robot' && (
+              <img src='robot.png' width="50" />
+            )}
+            {message}
+            {sender ==='user' && (
+               <img src='user.png' width="50" />
+            )}
+          </div>
+        );
+        
+        
+      }
+
+      function App(){
         return (
           <>
-            hello chatbot
-            <>
+            <ChatInput /> 
+            <ChatMessage 
+              message="hello chatbot" 
+              sender="user" 
+            />
+            <ChatMessage 
+              message="Hello! How can I help you?" 
+              sender="robot" 
+            />
+            <ChatMessage 
+              message="can you get me todays date" 
+              sender="user" 
+            />
+            <ChatMessage 
+              message="Today is June 2" 
+              sender="robot" 
+            />
           </>
         );
       }
-        const app = (
-            <>
-                <ChatInput /> 
-            </>
-        );
 
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(app);
+      ReactDOM.createRoot(container).render(<App />);
     </script>
   </body>
 </html>
