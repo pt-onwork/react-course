@@ -1,0 +1,16 @@
+react is an external library 
+Using React to create websites:load React & ReactDOM
+Using React to create mobile apps:load React & ReactNative
+.render is feature of react to display something
+so basically react mei we create a container and then put things in it ?
+babel external library- basically convert other languages to javascript 
+jsx- javascript but can slo write html directly with js code so we write jsx with react but is is not understand by web browser so babel used 
+eg . const button = <button>hello</button>;
+if we were to write in core js then 
+const button = document.createElement('button');
+button.innerHTML = 'hello';
+component - a piece of website , use pascal case like ChatInput
+jsx is strict so all elements need closing tags 
+<input></input>  --> compulsory --> also can be written as shortcut <input /> if nothing inside 
+component syntax --> {ChatInput()} == <ChatInput></ChatInput>
+Fragment (<></>)= group elements together, without creating an extra <div>
