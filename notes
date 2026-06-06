@@ -15,3 +15,10 @@ jsx is strict so all elements need closing tags
 component syntax --> {ChatInput()} == <ChatInput></ChatInput>
 Fragment (<></>)= group elements together, without creating an extra <div>
 props(properties) is an object containing all atributes given to the component 
+in react when we give an array of component , each component should be given a key to track changes in the array
+state - data connected to html, when data changes, html changes 
+array of this state --> array[0] gives current value 
+array[1] contains funcition that updates data --> updater funtion 
+inr eact we copy the data and then modify rather than modifying the original data
+...chatMessages --> copy of chatMessages array--> spread operator 
+lifting state up - when we want to share data between components, we move the state to the closest common ancestor of the components that need it. This is called "lifting state up".
