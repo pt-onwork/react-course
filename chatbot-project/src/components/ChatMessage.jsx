@@ -1,8 +1,10 @@
 import RobotProfileImage from '../assets/robot.png'
-import UserProfileImage from '../assets/user.png'
+import UserProfileImage from '../assets/image.png'
 import './ChatMessage.css';
+import dayjs from 'dayjs';
 
-export function ChatMessage({message,sender}){
+console.log({UserProfileImage});
+export function ChatMessage({message,sender,time}){
   //destructuring props
   //const {message,sender} = props;
   
@@ -16,7 +18,7 @@ export function ChatMessage({message,sender}){
     );
   } guard operator used below inside jsx directly &&
   */
-
+  const formattedTime = dayjs(time).format('HH:mm');
   return (
     <div className={
       sender === 'user' ? 
@@ -28,7 +30,11 @@ export function ChatMessage({message,sender}){
       )}
       <div className="chat-message-text">
         {message}
+        <div className="chat-message-time">
+          {formattedTime}
+        </div>
       </div>
+      
       {sender ==='user' && (
           <img src={UserProfileImage} className="chat-message-profile"/>
       )}
