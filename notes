@@ -31,3 +31,14 @@ useeffect lets us run some code after some code is created or updated
 dependency array used to let it know when to run a code when what changes, if it is empty then useeffect will run only when the elem created 
 use ref lets us automatically save html element from the component 
 ref is a container with special react features 
+node lets us run js code outside browser.
+npm is node package manager 
+lets us install external libraries into our packages 
+intall create-vite package and run create-vite command in command line shortcut is npx create-vite 
+eslint highlights problems in js code 
+vite is tool used to set up this project
+also helps us build the website 
+also creates a server -->localhost
+for react load external modules using node_modules and not using script 
+strictmode gives additional checks and warnings while developing app 
+vite lets us import any type of file 
