@@ -43,3 +43,6 @@ for react load external modules using node_modules and not using script
 strictmode gives additional checks and warnings while developing app 
 vite lets us import any type of file 
 npm run means look into package.json and then look into scripts, the the dev means run command written after dev: 
+routing lets us create multipe pages in react  using one html file 
+routes tell react all the pages that are in our website 
+to add a page , use component route 
