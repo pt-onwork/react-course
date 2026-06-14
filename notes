@@ -46,3 +46,5 @@ npm run means look into package.json and then look into scripts, the the dev mea
 routing lets us create multipe pages in react  using one html file 
 routes tell react all the pages that are in our website 
 to add a page , use component route 
+components folder is for shared components and shared folder is for compoenents specific to a page 
+by default a element for multiple pages reloads the page to switch between pages --> for this react router provides component named link   
