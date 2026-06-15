@@ -48,3 +48,4 @@ routes tell react all the pages that are in our website
 to add a page , use component route 
 components folder is for shared components and shared folder is for compoenents specific to a page 
 by default a element for multiple pages reloads the page to switch between pages --> for this react router provides component named link   
+NavLink is useful for navigation links 
