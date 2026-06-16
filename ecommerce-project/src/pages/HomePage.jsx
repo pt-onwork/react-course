@@ -1,22 +1,25 @@
 import axios from 'axios';
+import {useEffect, useState} from 'react'
 import './HomePage.css';
 import { Header } from '../components/Header';
 import CheckMarkIcon from '../assets/images/icons/checkmark.png';
-import { products } from '../../starting-code/data/products';
 
 export function HomePage() {
-
-  axios.get('http://localhost:3000/api/products')
+  const [products, setProducts] = useState([]);
+  useEffect(()=>{
+    axios.get('http://localhost:3000/api/products')
     .then((response)=>{
-      console.log(response.data);
+      setProducts(response.data);
     })
+  },[]);
+  
 
   // fetch('http://localhost:3000/api/products')
   //   .then((response)=>{
   //     return response.json()
   //   }).then((data)=>{
   //     console.log(data)
-  //   }); short form of this is above using axios 
+  //   }); short form of this is above using axios , useEffect is added later 
 
   return (
     <>
