@@ -56,3 +56,4 @@ fetch and response.json both are aynchronous so both are used with then and not 
 axios--> cleaner way to make requests to the backend 
 strict mode runs useeffect twice during development to catch bugs 
 /api in starting of url means they are meant for interacting with the backend 
+<base href = "/"/> adds / infront of all urls 
