@@ -53,3 +53,4 @@ fetch is used to load data from backend , it returns a promise , a promise lets 
 fetch takes time so rest code keeps running and then when fetch gets loaded completely then the then() things works 
 response.json gives us the data attached to the response 
 fetch and response.json both are aynchronous so both are used with then and not used with const variable 
+axios--> cleaner way to make requests to the backend 
