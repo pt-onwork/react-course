@@ -1,23 +1,31 @@
 import axios from 'axios';
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import './HomePage.css';
 import { Header } from '../../components/Header';
 import CheckMarkIcon from '../../assets/images/icons/checkmark.png';
-import { ProductsGrid} from './ProductsGrid'
+import { ProductsGrid } from './ProductsGrid'
 
-export function HomePage({cart}) {
+export function HomePage({ cart }) {
   const [products, setProducts] = useState([]);
 
-  useEffect(()=>{
-    axios.get('/api/products')
-    .then((response)=>{
+  useEffect(() => {
+    const getHomeData = async () => {
+      const response = await axios.get('/api/products');
       setProducts(response.data);
-    });
+    };
+    getHomeData();
+
+  }, []);
+
+  // axios.get('/api/products')
+  // .then((response)=>{
+  //   setProducts(response.data);
+  // }); use of async await above without using .then as with await it can be stored in variable
 
 
-  },[]);
 
-  
+
+
 
   // fetch('http://localhost:3000/api/products')
   //   .then((response)=>{
@@ -31,10 +39,10 @@ export function HomePage({cart}) {
       <title>Ecommerce Project</title>
       <link rel="icon" type="image/svg+xml" href="home-favicon.png" />
 
-      <Header cart = {cart} />
+      <Header cart={cart} />
 
       <div className="home-page">
-        <ProductsGrid products = {products}/>
+        <ProductsGrid products={products} />
       </div>
     </>
   )

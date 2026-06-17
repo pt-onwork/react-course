@@ -57,3 +57,8 @@ axios--> cleaner way to make requests to the backend
 strict mode runs useeffect twice during development to catch bugs 
 /api in starting of url means they are meant for interacting with the backend 
 <base href = "/"/> adds / infront of all urls 
+async lets us write normal code asynchronous code 
+recommended to use async await instead of promises
+useEffect should return nothing or just a cleanup function 
+to use async await inside useEffect, make and run a new function inside useEffect 
+async await lets us write asynchronous code like normal code  
