@@ -1,9 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect, Fragment } from 'react'
-import dayjs from 'dayjs'
-import { formatMoney } from '../../utils/money'
+import { OrdersGrid } from './OrdersGrid'
 import './OrdersPage.css'
-import BuyAgainIcon from '../../assets/images/icons/buy-again.png';
 import { Header } from '../../components/Header'
 export function OrdersPage({ cart }) {
   const [orders, setOrders] = useState([]);
@@ -13,10 +11,7 @@ export function OrdersPage({ cart }) {
       setOrders(response.data)
     }
     fetchOrdersData();
-   
-   
-   
-   
+
     // axios.get('/api/orders?expand=products')
     //   .then((response) => {
     //     setOrders(response.data)
@@ -34,7 +29,8 @@ export function OrdersPage({ cart }) {
       <div className="orders-page">
         <div className="page-title">Your Orders</div>
 
-        <div className="orders-grid">
+        <OrdersGrid orders= {orders}/>
+        { /* <div className="orders-grid">
           {
             orders.map((order) => {
               return (
@@ -104,7 +100,7 @@ export function OrdersPage({ cart }) {
               )
             })
           }
-        </div>
+        </div> moved to ordersgrid.jsx */ }
       </div>
     </>
   )

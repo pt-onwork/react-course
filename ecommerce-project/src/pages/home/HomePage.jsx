@@ -14,6 +14,7 @@ export function HomePage({ cart }) {
       setProducts(response.data);
     };
     getHomeData();
+    // console.log(products);
 
   }, []);
 

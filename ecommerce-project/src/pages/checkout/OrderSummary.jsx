@@ -1,24 +1,19 @@
-import { formatMoney} from '../../utils/money'
-import dayjs from 'dayjs'
 import { DeliveryOptions } from './DeliveryOptions'
-export function OrderSummary({cart, deliveryOptions}) {
+import { CartItemDetails } from './CartItemDetails'
+import { DeliveryDate } from './DeliveryDate'
+export function OrderSummary({ cart, deliveryOptions }) {
   return (
     <div className="order-summary">
 
       {deliveryOptions.length > 0 && cart.map((cartItem) => {
-        const selectedDeliveryOption = deliveryOptions
-          .find((deliveryOption) => {
-            return deliveryOption.id === cartItem.deliveryOptionId
-
-          })
+        
         return (
           <div key={cartItem.productId} className="cart-item-container">
-            <div className="delivery-date">
-              Delivery date: {dayjs(selectedDeliveryOption.estimatedDeliveryTimeMs).format('dddd, MMMM D')}
-            </div>
-
+            <DeliveryDate cartItem = {cartItem} deliveryOptions = {deliveryOptions}/>
             <div className="cart-item-details-grid">
-              <img className="product-image"
+              <CartItemDetails cartItem={cartItem} />
+
+              {/* <img className="product-image"
                 src={cartItem.product.image} />
 
               <div className="cart-item-details">
@@ -39,9 +34,9 @@ export function OrderSummary({cart, deliveryOptions}) {
                     Delete
                   </span>
                 </div>
-              </div>
+              </div> shifted to cartitemdetails.jsx */}
 
-              {<DeliveryOptions cartItem = {cartItem} deliveryOptions = {deliveryOptions}/>}
+              {<DeliveryOptions cartItem={cartItem} deliveryOptions={deliveryOptions} />}
             </div>
           </div>
         )
