@@ -31,6 +31,9 @@
      in the grid from stretching vertically. */
   align-items: start;
 }
+.updateQuantity{
+  width:50px;
+}
 
 @media (max-width: 1000px) {
   .checkout-page .main {
