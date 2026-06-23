@@ -62,3 +62,4 @@ recommended to use async await instead of promises
 useEffect should return nothing or just a cleanup function 
 to use async await inside useEffect, make and run a new function inside useEffect 
 async await lets us write asynchronous code like normal code  
+async makes the function return a promise 
