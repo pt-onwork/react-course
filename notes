@@ -63,3 +63,29 @@ useEffect should return nothing or just a cleanup function
 to use async await inside useEffect, make and run a new function inside useEffect 
 async await lets us write asynchronous code like normal code  
 async makes the function return a promise 
+testing In this lesson:
+
+1. Automated tests with Vitest
+2. Unit test = test 1 piece of the code
+3. it(), expect(), describe()
+4. Integration tests = test multiple pieces of code
+5. Test a component (using render and screen)
+6. Mock = fake version of a function / package
+7. Mock the implementation = make a mock do whatever
+we want
+
+1. expect(function(x)).toBe(y)
+2. expect(
+  screen.getByTestId('data-testid').toHaveValue(y)
+)
+3. render(<component>)
+4. const user = userEvent.setup()
+5. user.click or user.selectOptions() 
+asynchronous so use async and await 
+6. expect(axios.post).toHaveBeenCalledWith('/api/cart-items',{
+      productId:'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+      quantity:3
+    });
+7.const productContainers = await screen.findAllByTestId('product-container');
+  const addToCart2= within(productContainers[1]).getByTestId('add-to-cart-button');
+  await user.click(addToCart2);

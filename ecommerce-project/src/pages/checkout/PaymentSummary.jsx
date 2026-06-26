@@ -15,35 +15,35 @@ export function PaymentSummary({paymentSummary, loadCart}) {
       </div>
       {paymentSummary && (
         <>
-          <div className="payment-summary-row">
+          <div className="payment-summary-row" data-testid="payment-summary-products-cost">
             <div>Items ({paymentSummary.totalItems}):</div>
             <div className="payment-summary-money">
               {formatMoney(paymentSummary.productCostCents)}
             </div>
           </div>
 
-          <div className="payment-summary-row">
+          <div className="payment-summary-row" data-testid="payment-summary-shipping">
             <div>Shipping &amp; handling:</div>
             <div className="payment-summary-money">
               {formatMoney(paymentSummary.shippingCostCents)}
             </div>
           </div>
 
-          <div className="payment-summary-row subtotal-row">
+          <div className="payment-summary-row subtotal-row" data-testid="payment-summary-before-tax">
             <div>Total before tax:</div>
             <div className="payment-summary-money">
               {formatMoney(paymentSummary.totalCostBeforeTaxCents)}
             </div>
           </div>
 
-          <div className="payment-summary-row">
+          <div className="payment-summary-row" data-testid="payment-summary-estimated-tax">
             <div>Estimated tax (10%):</div>
             <div className="payment-summary-money">
               {formatMoney(paymentSummary.taxCents)}
             </div>
           </div>
 
-          <div className="payment-summary-row total-row">
+          <div className="payment-summary-row total-row" data-testid="payment-summary-order-total">
             <div>Order total:</div>
             <div className="payment-summary-money">
               {formatMoney(paymentSummary.totalCostCents)}
@@ -54,6 +54,7 @@ export function PaymentSummary({paymentSummary, loadCart}) {
 
 
       <button className="place-order-button button-primary"
+        data-testid="create-order-button"
         onClick={createOrder}
       >
         Place your order
