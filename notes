@@ -89,4 +89,4 @@ asynchronous so use async and await
 7.const productContainers = await screen.findAllByTestId('product-container');
   const addToCart2= within(productContainers[1]).getByTestId('add-to-cart-button');
   await user.click(addToCart2);
-
+typescript is basically javascript with extra features like defining which type of value is to be put inside a variable and can also figure out the type automatically
