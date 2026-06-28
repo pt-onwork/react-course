@@ -11,11 +11,11 @@ function App(){
       'give me a unique id': ()=>{
         return `Sure! Here's a unique ID ${crypto.randomUUID()}`;
       }
-  },[])
-  });
+  })
+  },[]);
 
   const [chatMessages,setChatMessages] = useState(
-    JSON.parse(localStorage.getItem('messages'))
+    JSON.parse(localStorage.getItem('messages')) || []
   // {
   //   message:"hello chatbot",
   //   sender:"user",
